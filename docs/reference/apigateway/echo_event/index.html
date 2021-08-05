@@ -1,0 +1,3704 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.65.2" />
+    <meta name="description" content="Sparta - AWS Lambda Microservices">
+<meta name="author" content="Matt Weagle">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Echo :: Sparta - AWS Lambda Microservices</title>
+
+    
+    <link href="/css/nucleus.css?1582502099" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1582502099" rel="stylesheet">
+    <link href="/css/hybrid.css?1582502099" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1582502099" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1582502099" rel="stylesheet">
+    <link href="/css/auto-complete.css?1582502099" rel="stylesheet">
+    <link href="/css/theme.css?1582502099" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1582502099" rel="stylesheet">
+    
+      <link href="/css/theme-sparta.css?1582502099" rel="stylesheet">
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1582502099"></script>
+    
+    <link href="/css/vs.css?1582502099" rel="stylesheet">
+    <script src="/js/highlight.pack.js?1582502099"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+<style type="text/css">
+pre {
+    padding: 2px;
+}
+</style>
+
+
+  </head>
+  <body class="" data-url="/reference/apigateway/echo_event/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a href="/"><img src="/images/SpartaLogoNoDomain.png" height="50%" width="50%"/></a>
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1582502099"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1582502099"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1582502099"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/getting_started/" title="Getting Started" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/getting_started/">
+          Getting Started
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/example_service/" title="Example Service" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/example_service/">
+          Example Service
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/example_service/step1/" title="Overview" class="dd-item ">
+        <a href="/example_service/step1/">
+        Overview
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/example_service/step2/" title="Details" class="dd-item ">
+        <a href="/example_service/step2/">
+        Details
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/concepts/" title="Concepts" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/concepts/">
+          Concepts
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/reference/" title="Reference" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/reference/">
+          Reference
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/reference/apigateway/" title="" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/reference/apigateway/">
+          <b>API Gateway</b>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/apigateway/echo_event/" title="Echo" class="dd-item active">
+        <a href="/reference/apigateway/echo_event/">
+        Echo
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/apigateway/request_params/" title="Request Parameters" class="dd-item ">
+        <a href="/reference/apigateway/request_params/">
+        Request Parameters
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/apigateway/context/" title="Request Context" class="dd-item ">
+        <a href="/reference/apigateway/context/">
+        Request Context
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/apigateway/cors/" title="CORS" class="dd-item ">
+        <a href="/reference/apigateway/cors/">
+        CORS
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/apigateway/slack/" title="Slack SlashCommand" class="dd-item ">
+        <a href="/reference/apigateway/slack/">
+        Slack SlashCommand
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/apigateway/s3site/" title="S3 Sites with CORS" class="dd-item ">
+        <a href="/reference/apigateway/s3site/">
+        S3 Sites with CORS
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/reference/apiv2gateway/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/reference/apiv2gateway/">
+          <b>API V2 Gateway</b>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/reference/eventsources/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/reference/eventsources/">
+          <b>Event Sources</b>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/eventsources/codecommit/" title="CodeCommit" class="dd-item ">
+        <a href="/reference/eventsources/codecommit/">
+        CodeCommit
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/eventsources/cloudformation/" title="CloudFormation" class="dd-item ">
+        <a href="/reference/eventsources/cloudformation/">
+        CloudFormation
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/eventsources/cloudwatchevents/" title="CloudWatch Events" class="dd-item ">
+        <a href="/reference/eventsources/cloudwatchevents/">
+        CloudWatch Events
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/eventsources/cloudwatchlogs/" title="CloudWatch Logs" class="dd-item ">
+        <a href="/reference/eventsources/cloudwatchlogs/">
+        CloudWatch Logs
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/eventsources/cognito/" title="Cognito" class="dd-item ">
+        <a href="/reference/eventsources/cognito/">
+        Cognito
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/eventsources/dynamodb/" title="DynamoDB" class="dd-item ">
+        <a href="/reference/eventsources/dynamodb/">
+        DynamoDB
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/eventsources/kinesis/" title="Kinesis" class="dd-item ">
+        <a href="/reference/eventsources/kinesis/">
+        Kinesis
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/eventsources/s3/" title="S3" class="dd-item ">
+        <a href="/reference/eventsources/s3/">
+        S3
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/eventsources/ses/" title="SES" class="dd-item ">
+        <a href="/reference/eventsources/ses/">
+        SES
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/eventsources/sns/" title="SNS" class="dd-item ">
+        <a href="/reference/eventsources/sns/">
+        SNS
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/eventsources/sqs/" title="SQS" class="dd-item ">
+        <a href="/reference/eventsources/sqs/">
+        SQS
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/reference/archetypes/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/reference/archetypes/">
+          <b>Archetype Constructors</b>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/archetypes/event_bridge/" title="Event Bridge" class="dd-item ">
+        <a href="/reference/archetypes/event_bridge/">
+        Event Bridge
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/archetypes/codecommit/" title="CodeCommit" class="dd-item ">
+        <a href="/reference/archetypes/codecommit/">
+        CodeCommit
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/archetypes/cloudwatch/" title="CloudWatch" class="dd-item ">
+        <a href="/reference/archetypes/cloudwatch/">
+        CloudWatch
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/archetypes/dynamodb/" title="DynamoDB" class="dd-item ">
+        <a href="/reference/archetypes/dynamodb/">
+        DynamoDB
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/archetypes/kinesis/" title="Kinesis" class="dd-item ">
+        <a href="/reference/archetypes/kinesis/">
+        Kinesis
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/archetypes/kinesis_firehose/" title="Kinesis Firehose" class="dd-item ">
+        <a href="/reference/archetypes/kinesis_firehose/">
+        Kinesis Firehose
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/archetypes/rest/" title="REST Service" class="dd-item ">
+        <a href="/reference/archetypes/rest/">
+        REST Service
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/archetypes/s3/" title="S3" class="dd-item ">
+        <a href="/reference/archetypes/s3/">
+        S3
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/archetypes/sns/" title="SNS" class="dd-item ">
+        <a href="/reference/archetypes/sns/">
+        SNS
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/reference/decorators/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/reference/decorators/">
+          <b>Build-Time Decorators</b>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/decorators/application_load_balancer/" title="Application Load Balancer" class="dd-item ">
+        <a href="/reference/decorators/application_load_balancer/">
+        Application Load Balancer
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/decorators/cloudmap/" title="CloudMap Service Discovery" class="dd-item ">
+        <a href="/reference/decorators/cloudmap/">
+        CloudMap Service Discovery
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/decorators/cloudfront_distribution/" title="CloudFront Distribution" class="dd-item ">
+        <a href="/reference/decorators/cloudfront_distribution/">
+        CloudFront Distribution
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/decorators/lambda_versioning/" title="Lambda Versioning Decorator" class="dd-item ">
+        <a href="/reference/decorators/lambda_versioning/">
+        Lambda Versioning Decorator
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/decorators/publish_outputs/" title="Publishing Outputs" class="dd-item ">
+        <a href="/reference/decorators/publish_outputs/">
+        Publishing Outputs
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/decorators/s3_artifact_publisher/" title="S3 Artifact Publisher" class="dd-item ">
+        <a href="/reference/decorators/s3_artifact_publisher/">
+        S3 Artifact Publisher
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/decorators/dynamic_infrastructure/" title="Dynamic Infrastructure" class="dd-item ">
+        <a href="/reference/decorators/dynamic_infrastructure/">
+        Dynamic Infrastructure
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/reference/interceptors/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/reference/interceptors/">
+          <b>Runtime Interceptors</b>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/interceptors/xray_interceptor/" title="XRayInterceptor" class="dd-item ">
+        <a href="/reference/interceptors/xray_interceptor/">
+        XRayInterceptor
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/reference/cli_options/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/reference/cli_options/">
+          <b>Command Line Options</b>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/reference/application/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/reference/application/">
+          <b>Application Customization</b>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/application/custom_commands/" title="Custom Commands" class="dd-item ">
+        <a href="/reference/application/custom_commands/">
+        Custom Commands
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/application/custom_flags/" title="Custom Flags" class="dd-item ">
+        <a href="/reference/application/custom_flags/">
+        Custom Flags
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/application/environments/" title="Managing Environments" class="dd-item ">
+        <a href="/reference/application/environments/">
+        Managing Environments
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/application/custom_lambda_resources/" title="CloudFormation Resources" class="dd-item ">
+        <a href="/reference/application/custom_lambda_resources/">
+        CloudFormation Resources
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/application/custom_resources/" title="Custom Resources" class="dd-item ">
+        <a href="/reference/application/custom_resources/">
+        Custom Resources
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/reference/step/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/reference/step/">
+          <b>Step Functions</b>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/step/lambda/" title="Lambda" class="dd-item ">
+        <a href="/reference/step/lambda/">
+        Lambda
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/step/fargate/" title="Fargate" class="dd-item ">
+        <a href="/reference/step/fargate/">
+        Fargate
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/reference/step/services/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/reference/step/services/">
+          <b>Service Integrations</b>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/step/services/dynamodb/" title="Amazon DynamoDb" class="dd-item ">
+        <a href="/reference/step/services/dynamodb/">
+        Amazon DynamoDb
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/step/services/sagemaker/" title="Amazon SageMaker" class="dd-item ">
+        <a href="/reference/step/services/sagemaker/">
+        Amazon SageMaker
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/step/services/sns/" title="Amazon SNS" class="dd-item ">
+        <a href="/reference/step/services/sns/">
+        Amazon SNS
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/step/services/sqs/" title="Amazon SQS" class="dd-item ">
+        <a href="/reference/step/services/sqs/">
+        Amazon SQS
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/step/services/batch/" title="AWS Batch" class="dd-item ">
+        <a href="/reference/step/services/batch/">
+        AWS Batch
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/step/services/fargate/" title="AWS Fargate" class="dd-item ">
+        <a href="/reference/step/services/fargate/">
+        AWS Fargate
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/step/services/glue/" title="AWS Glue" class="dd-item ">
+        <a href="/reference/step/services/glue/">
+        AWS Glue
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/discovery/" title="Discovery Service" class="dd-item ">
+        <a href="/reference/discovery/">
+        Discovery Service
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/docker/" title="Docker" class="dd-item ">
+        <a href="/reference/docker/">
+        Docker
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/hybrid_topologies/" title="Hybrid Topologies" class="dd-item ">
+        <a href="/reference/hybrid_topologies/">
+        Hybrid Topologies
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/reference/operations/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/reference/operations/">
+          <b>Operations</b>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/operations/magefile/" title="Magefiles" class="dd-item ">
+        <a href="/reference/operations/magefile/">
+        Magefiles
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/operations/cloudwatch_alarms/" title="CloudWatch Alarms" class="dd-item ">
+        <a href="/reference/operations/cloudwatch_alarms/">
+        CloudWatch Alarms
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/operations/cloudwatch_dashboard/" title="CloudWatch Dashboard" class="dd-item ">
+        <a href="/reference/operations/cloudwatch_dashboard/">
+        CloudWatch Dashboard
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/operations/codedeploy_service_update/" title="CodeDeploy Service Update" class="dd-item ">
+        <a href="/reference/operations/codedeploy_service_update/">
+        CodeDeploy Service Update
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/operations/cicd/" title="CI/CD" class="dd-item ">
+        <a href="/reference/operations/cicd/">
+        CI/CD
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/operations/deployment_strategies/" title="Deployment Strategies" class="dd-item ">
+        <a href="/reference/operations/deployment_strategies/">
+        Deployment Strategies
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/operations/metrics_publisher/" title="Metrics Publisher" class="dd-item ">
+        <a href="/reference/operations/metrics_publisher/">
+        Metrics Publisher
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/operations/profiling/" title="Profiling" class="dd-item ">
+        <a href="/reference/operations/profiling/">
+        Profiling
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/testing/" title="Testing" class="dd-item ">
+        <a href="/reference/testing/">
+        Testing
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/supporting_packages/" title="Supporting Packages" class="dd-item ">
+        <a href="/reference/supporting_packages/">
+        Supporting Packages
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/limitations/" title="Limitations" class="dd-item ">
+        <a href="/reference/limitations/">
+        Limitations
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/faq/" title="FAQ" class="dd-item ">
+        <a href="/reference/faq/">
+        FAQ
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/presentations/" title="Presentations" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/presentations/">
+          Presentations
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/meta/" title="Meta" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/meta/">
+          Meta
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/credits/" title="Credits" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/credits/">
+          Credits
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/mweagle/Sparta"><i class='fab fa-fw fa-github'></i> Github repo</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/mweagle?utf8=%E2%9C%93&amp;tab=repositories&amp;q=Sparta&amp;type=&amp;language="><i class='fas fa-fw fa-camera'></i> Showcases</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/mweagle/Sparta/blob/master/CHANGES.md"><i class='fas fa-fw fa-signal'></i> Release History</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      
+  Build: <a target="_blank" href="https://github.com/mweagle/Sparta/commit/21b5553d">21b5553d</a><p/>
+  Date: 2020-02-23T15:54:59-08:00
+
+
+<p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="http://getgrav.org">Grav</a> and <a href="http://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/mweagle/Sparta/tree/docs/content/reference/apigateway/echo_event.md" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'></a> > <a href='/reference/'>Reference</a> > <a href='/reference/apigateway/'></a> > Echo
+          
+         
+          
+         
+          
+         
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#api-gateway">API Gateway</a></li>
+    <li><a href="#resource">Resource</a></li>
+    <li><a href="#provision">Provision</a></li>
+    <li><a href="#verify">Verify</a></li>
+    <li><a href="#mapping-templates">Mapping Templates</a>
+      <ul>
+        <li><a href="#_applicationjson_">application/json</a></li>
+        <li><a href="#__-default-content-type">* (Default Content-Type)</a></li>
+      </ul>
+    </li>
+    <li><a href="#proxying-envelope">Proxying Envelope</a></li>
+    <li><a href="#cleanup">Cleanup</a></li>
+    <li><a href="#wrapping-up">Wrapping Up</a>
+      <ul>
+        <li><a href="#notes">Notes</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Echo
+            </h1>
+          
+
+        
+
+
+
+<p>To start, we&rsquo;ll create a HTTPS accessible lambda function that simply echoes back the contents of incoming API Gateway
+Lambda event. The source for this is the <a href="https://github.com/mweagle/SpartaHTML">SpartaHTML</a>.</p>
+<p>For reference, the <code>helloWorld</code> function is below.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#00f">import</span> (
+  awsLambdaEvents <span style="color:#a31515">&#34;github.com/aws/aws-lambda-go/events&#34;</span>
+  spartaAPIGateway <span style="color:#a31515">&#34;github.com/mweagle/Sparta/aws/apigateway&#34;</span>
+)
+
+<span style="color:#00f">func</span> helloWorld(ctx context.Context,
+  gatewayEvent spartaAWSEvents.APIGatewayRequest) (*spartaAPIGateway.Response, <span style="color:#2b91af">error</span>) {
+  logger, loggerOk := ctx.Value(sparta.ContextKeyLogger).(*logrus.Logger)
+  <span style="color:#00f">if</span> loggerOk {
+    logger.Info(<span style="color:#a31515">&#34;Hello world structured log message&#34;</span>)
+  }
+  <span style="color:#008000">// Return a message, together with the incoming input...
+</span><span style="color:#008000"></span>  <span style="color:#00f">return</span> spartaAPIGateway.NewResponse(http.StatusOK, &amp;helloWorldResponse{
+    Message: fmt.Sprintf(<span style="color:#a31515">&#34;Hello world 🌏&#34;</span>),
+    Request: gatewayEvent,
+  }), <span style="color:#00f">nil</span>
+}
+</code></pre></div><h2 id="api-gateway">API Gateway</h2>
+<p>The first requirement is to create a new <a href="https://godoc.org/github.com/mweagle/Sparta#API">API</a> instance via <a href="https://godoc.org/github.com/mweagle/Sparta#NewAPIGateway">sparta.NewAPIGateway()</a>.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go">stage := sparta.NewStage(<span style="color:#a31515">&#34;prod&#34;</span>)
+apiGateway := sparta.NewAPIGateway(<span style="color:#a31515">&#34;MySpartaAPI&#34;</span>, stage)
+</code></pre></div><p>In the example above, we&rsquo;re also including a <a href="https://godoc.org/github.com/mweagle/Sparta#Stage">Stage</a> value.
+A non-<code>nil</code> Stage value will cause the registered API to be deployed.  If the Stage value is <code>nil</code>, a REST API will be created,
+but it will not be <a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-deploy-api.html">deployed</a>
+(and therefore not publicly accessible).</p>
+<h2 id="resource">Resource</h2>
+<p>The next step is to associate a URL path with the <code>sparta.LambdaAWSInfo</code> struct that represents the <strong>go</strong> function:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#00f">func</span> spartaHTMLLambdaFunctions(api *sparta.API) []*sparta.LambdaAWSInfo {
+  <span style="color:#00f">var</span> lambdaFunctions []*sparta.LambdaAWSInfo
+  lambdaFn, _ := sparta.NewAWSLambda(sparta.LambdaName(helloWorld),
+    helloWorld,
+    sparta.IAMRoleDefinition{})
+
+  <span style="color:#00f">if</span> <span style="color:#00f">nil</span> != api {
+    apiGatewayResource, _ := api.NewResource(<span style="color:#a31515">&#34;/hello&#34;</span>, lambdaFn)
+
+    <span style="color:#008000">// We only return http.StatusOK
+</span><span style="color:#008000"></span>    apiMethod, apiMethodErr := apiGatewayResource.NewMethod(<span style="color:#a31515">&#34;GET&#34;</span>,
+      http.StatusOK,
+      http.StatusInternalServerError)
+    <span style="color:#00f">if</span> <span style="color:#00f">nil</span> != apiMethodErr {
+      panic(<span style="color:#a31515">&#34;Failed to create /hello resource: &#34;</span> + apiMethodErr.Error())
+    }
+    <span style="color:#008000">// The lambda resource only supports application/json Unmarshallable
+</span><span style="color:#008000"></span>    <span style="color:#008000">// requests.
+</span><span style="color:#008000"></span>    apiMethod.SupportedRequestContentTypes = []<span style="color:#2b91af">string</span>{<span style="color:#a31515">&#34;application/json&#34;</span>}
+  }
+  <span style="color:#00f">return</span> append(lambdaFunctions, lambdaFn)
+}
+</code></pre></div><p>Our <code>helloWorld</code> only supports <code>GET</code>.  We&rsquo;ll see how a single lambda function can support multiple HTTP methods shortly.</p>
+<h2 id="provision">Provision</h2>
+<p>The final step is to to provide the API instance to <code>Sparta.Main()</code></p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#008000">// Register the function with the API Gateway
+</span><span style="color:#008000"></span>apiStage := sparta.NewStage(<span style="color:#a31515">&#34;v1&#34;</span>)
+apiGateway := sparta.NewAPIGateway(<span style="color:#a31515">&#34;SpartaHTML&#34;</span>, apiStage)
+</code></pre></div><p>Once the service is successfully provisioned, the <code>Outputs</code> key will include the API Gateway Deployed URL (sample):</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-text" data-lang="text">INFO[0096] ────────────────────────────────────────────────
+INFO[0096] Stack Outputs
+INFO[0096] ────────────────────────────────────────────────
+INFO[0096] S3SiteURL                                     Description=&#34;S3 Website URL&#34; Value=&#34;http://spartahtml-mweagle-s3site89c05c24a06599753eb3ae4e-1w6rehqu6x04c.s3-website-us-west-2.amazonaws.com&#34;
+INFO[0096] APIGatewayURL                                 Description=&#34;API Gateway URL&#34; Value=&#34;https://w2tefhnt4b.execute-api.us-west-2.amazonaws.com/v1&#34;
+INFO[0096] ────────────────────────────────────────────────
+</code></pre></div><p>Combining the <em>API Gateway URL</em> <code>OutputValue</code> with our resource path (<em>/hello/world/test</em>), we get the absolute URL to our lambda function: <a href="https://w2tefhnt4b.execute-api.us-west-2.amazonaws.com/v1/hello">https://w2tefhnt4b.execute-api.us-west-2.amazonaws.com/v1/hello</a></p>
+<h2 id="verify">Verify</h2>
+<p>Let&rsquo;s query the lambda function and see what the <code>event</code> data is at execution time. The
+snippet below is pretty printed by piping the response through <a href="https://stedolan.github.io/jq/">jq</a>.</p>
+<pre><code class="language-nohighlight" data-lang="nohighlight">$ curl -vs https://3e7ux226ga.execute-api.us-west-2.amazonaws.com/v1/hello | jq .
+*   Trying 52.84.237.220...
+* TCP_NODELAY set
+* Connected to 3e7ux226ga.execute-api.us-west-2.amazonaws.com (52.84.237.220) port 443 (#0)
+* TLS 1.2 connection using TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+* Server certificate: *.execute-api.us-west-2.amazonaws.com
+* Server certificate: Amazon
+* Server certificate: Amazon Root CA 1
+* Server certificate: Starfield Services Root Certificate Authority - G2
+&gt; GET /v1/hello HTTP/1.1
+&gt; Host: 3e7ux226ga.execute-api.us-west-2.amazonaws.com
+&gt; User-Agent: curl/7.54.0
+&gt; Accept: */*
+&gt;
+&lt; HTTP/1.1 200 OK
+&lt; Content-Type: application/json
+&lt; Content-Length: 1137
+&lt; Connection: keep-alive
+&lt; Date: Mon, 29 Jan 2018 14:15:28 GMT
+&lt; x-amzn-RequestId: db7f5734-04fe-11e8-b264-c70ecab3a032
+&lt; Access-Control-Allow-Origin: http://spartahtml-mweagle-s3site89c05c24a06599753eb3ae4e-419zo4dp8n2d.s3-website-us-west-2.amazonaws.com
+&lt; Access-Control-Allow-Headers: Content-Type,X-Amz-Date,Authorization,X-Api-Key
+&lt; Access-Control-Allow-Methods: *
+&lt; X-Amzn-Trace-Id: sampled=0;root=1-5a6f2c80-efb0f84554384252abca6d15
+&lt; X-Cache: Miss from cloudfront
+&lt; Via: 1.1 570a1979c411cb4529fa1e711db52490.cloudfront.net (CloudFront)
+&lt; X-Amz-Cf-Id: -UsCegiR1K3vJUFyAo9IMrWGdH8rKW6UBrtJLjxZqke19r0cxMl1NA==
+&lt;
+{ [1137 bytes data]
+* Connection #0 to host 3e7ux226ga.execute-api.us-west-2.amazonaws.com left intact
+{
+  &quot;Message&quot;: &quot;Hello world 🌏&quot;,
+  &quot;Request&quot;: {
+    &quot;method&quot;: &quot;GET&quot;,
+    &quot;body&quot;: {},
+    &quot;headers&quot;: {
+      &quot;Accept&quot;: &quot;*/*&quot;,
+      &quot;CloudFront-Forwarded-Proto&quot;: &quot;https&quot;,
+      &quot;CloudFront-Is-Desktop-Viewer&quot;: &quot;true&quot;,
+      &quot;CloudFront-Is-Mobile-Viewer&quot;: &quot;false&quot;,
+      &quot;CloudFront-Is-SmartTV-Viewer&quot;: &quot;false&quot;,
+      &quot;CloudFront-Is-Tablet-Viewer&quot;: &quot;false&quot;,
+      &quot;CloudFront-Viewer-Country&quot;: &quot;US&quot;,
+      &quot;Host&quot;: &quot;3e7ux226ga.execute-api.us-west-2.amazonaws.com&quot;,
+      &quot;User-Agent&quot;: &quot;curl/7.54.0&quot;,
+      &quot;Via&quot;: &quot;1.1 570a1979c411cb4529fa1e711db52490.cloudfront.net (CloudFront)&quot;,
+      &quot;X-Amz-Cf-Id&quot;: &quot;vAFNTV5uAMeTG9JN6IORnA7LYJhZyB3jHV7vh-7lXn2uZQUR6eHQUw==&quot;,
+      &quot;X-Amzn-Trace-Id&quot;: &quot;Root=1-5a6f2c80-2b48a9c86a30b0162d8ab1f1&quot;,
+      &quot;X-Forwarded-For&quot;: &quot;73.118.138.121, 205.251.214.60&quot;,
+      &quot;X-Forwarded-Port&quot;: &quot;443&quot;,
+      &quot;X-Forwarded-Proto&quot;: &quot;https&quot;
+    },
+    &quot;queryParams&quot;: {},
+    &quot;pathParams&quot;: {},
+    &quot;context&quot;: {
+      &quot;appId&quot;: &quot;&quot;,
+      &quot;method&quot;: &quot;GET&quot;,
+      &quot;requestId&quot;: &quot;db7f5734-04fe-11e8-b264-c70ecab3a032&quot;,
+      &quot;resourceId&quot;: &quot;401s9n&quot;,
+      &quot;resourcePath&quot;: &quot;/hello&quot;,
+      &quot;stage&quot;: &quot;v1&quot;,
+      &quot;identity&quot;: {
+        &quot;accountId&quot;: &quot;&quot;,
+        &quot;apiKey&quot;: &quot;&quot;,
+        &quot;caller&quot;: &quot;&quot;,
+        &quot;cognitoAuthenticationProvider&quot;: &quot;&quot;,
+        &quot;cognitoAuthenticationType&quot;: &quot;&quot;,
+        &quot;cognitoIdentityId&quot;: &quot;&quot;,
+        &quot;cognitoIdentityPoolId&quot;: &quot;&quot;,
+        &quot;sourceIp&quot;: &quot;73.118.138.121&quot;,
+        &quot;user&quot;: &quot;&quot;,
+        &quot;userAgent&quot;: &quot;curl/7.54.0&quot;,
+        &quot;userArn&quot;: &quot;&quot;
+      }
+    }
+  }
+}
+</code></pre><p>While this demonstrates that our lambda function is publicly accessible, it&rsquo;s not immediately obvious where the <code>*event</code> data is being populated.</p>
+<h2 id="mapping-templates">Mapping Templates</h2>
+<p>The event data that&rsquo;s actually supplied to <code>echoS3Event</code> is the complete HTTP request body.  This content is what the API Gateway sends to our lambda function, which is defined by the integration mapping.  This event data also includes the values of any whitelisted parameters.  When the API Gateway Method is defined, it optionally includes any whitelisted query params and header values that should be forwarded to the integration target.  For this example, we&rsquo;re not whitelisting any params, so those fields (<code>queryParams</code>, <code>pathParams</code>) are empty.  Then for each integration target (which can be AWS Lambda, a mock, or a HTTP Proxy), it&rsquo;s possible to transform the API Gateway request data and whitelisted arguments into a format that&rsquo;s more amenable to the target.</p>
+<p>Sparta uses a pass-through template that passes all valid data, with minor <strong>Body</strong> differences based on the inbound <em>Content-Type</em>:</p>
+<h3 id="_applicationjson_"><em>application/json</em></h3>
+<pre><code class="language-nohighlight" data-lang="nohighlight">#*
+Provide an automatic pass through template that transforms all inputs
+into the JSON payload sent to a golang function. The JSON behavior attempts to parse
+the incoming HTTP body as JSON assign it to the `body` field.
+
+See
+  https://forums.aws.amazon.com/thread.jspa?threadID=220274&amp;tstart=0
+  http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html
+*#
+{
+  &quot;method&quot;: &quot;$context.httpMethod&quot;,
+  &quot;body&quot; : $input.json('$'),
+  &quot;headers&quot;: {
+    #foreach($param in $input.params().header.keySet())
+    &quot;$param&quot;: &quot;$util.escapeJavaScript($input.params().header.get($param))&quot; #if($foreach.hasNext),#end
+    #end
+  },
+  &quot;queryParams&quot;: {
+    #foreach($param in $input.params().querystring.keySet())
+    &quot;$param&quot;: &quot;$util.escapeJavaScript($input.params().querystring.get($param))&quot; #if($foreach.hasNext),#end
+
+    #end
+  },
+  &quot;pathParams&quot;: {
+    #foreach($param in $input.params().path.keySet())
+    &quot;$param&quot;: &quot;$util.escapeJavaScript($input.params().path.get($param))&quot; #if($foreach.hasNext),#end
+    #end
+  },
+  &quot;context&quot; : {
+    &quot;apiId&quot; : &quot;$util.escapeJavaScript($context.apiId)&quot;,
+    &quot;method&quot; : &quot;$util.escapeJavaScript($context.httpMethod)&quot;,
+    &quot;requestId&quot; : &quot;$util.escapeJavaScript($context.requestId)&quot;,
+    &quot;resourceId&quot; : &quot;$util.escapeJavaScript($context.resourceId)&quot;,
+    &quot;resourcePath&quot; : &quot;$util.escapeJavaScript($context.resourcePath)&quot;,
+    &quot;stage&quot; : &quot;$util.escapeJavaScript($context.stage)&quot;,
+    &quot;identity&quot; : {
+      &quot;accountId&quot; : &quot;$util.escapeJavaScript($context.identity.accountId)&quot;,
+      &quot;apiKey&quot; : &quot;$util.escapeJavaScript($context.identity.apiKey)&quot;,
+      &quot;caller&quot; : &quot;$util.escapeJavaScript($context.identity.caller)&quot;,
+      &quot;cognitoAuthenticationProvider&quot; : &quot;$util.escapeJavaScript($context.identity.cognitoAuthenticationProvider)&quot;,
+      &quot;cognitoAuthenticationType&quot; : &quot;$util.escapeJavaScript($context.identity.cognitoAuthenticationType)&quot;,
+      &quot;cognitoIdentityId&quot; : &quot;$util.escapeJavaScript($context.identity.cognitoIdentityId)&quot;,
+      &quot;cognitoIdentityPoolId&quot; : &quot;$util.escapeJavaScript($context.identity.cognitoIdentityPoolId)&quot;,
+      &quot;sourceIp&quot; : &quot;$util.escapeJavaScript($context.identity.sourceIp)&quot;,
+      &quot;user&quot; : &quot;$util.escapeJavaScript($context.identity.user)&quot;,
+      &quot;userAgent&quot; : &quot;$util.escapeJavaScript($context.identity.userAgent)&quot;,
+      &quot;userArn&quot; : &quot;$util.escapeJavaScript($context.identity.userArn)&quot;
+    }
+  },
+   &quot;authorizer&quot;: {
+     #foreach($param in $context.authorizer.keySet())
+     &quot;$param&quot;: &quot;$util.escapeJavaScript($context.authorizer.get($param))&quot; #if($foreach.hasNext),#end
+     #end
+   }
+}
+
+</code></pre>
+<h3 id="__-default-content-type"><em>*</em> (Default <code>Content-Type</code>)</h3>
+<pre><code class="language-nohighlight" data-lang="nohighlight">#*
+Provide an automatic pass through template that transforms all inputs
+into the JSON payload sent to a golang function. The default behavior passes the 'body'
+key as raw string.
+
+See
+  https://forums.aws.amazon.com/thread.jspa?threadID=220274&amp;tstart=0
+  http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html
+*#
+{
+  &quot;method&quot;: &quot;$context.httpMethod&quot;,
+  &quot;body&quot; : &quot;$input.path('$')&quot;,
+  &quot;headers&quot;: {
+    #foreach($param in $input.params().header.keySet())
+    &quot;$param&quot;: &quot;$util.escapeJavaScript($input.params().header.get($param))&quot; #if($foreach.hasNext),#end
+    #end
+  },
+  &quot;queryParams&quot;: {
+    #foreach($param in $input.params().querystring.keySet())
+    &quot;$param&quot;: &quot;$util.escapeJavaScript($input.params().querystring.get($param))&quot; #if($foreach.hasNext),#end
+
+    #end
+  },
+  &quot;pathParams&quot;: {
+    #foreach($param in $input.params().path.keySet())
+    &quot;$param&quot;: &quot;$util.escapeJavaScript($input.params().path.get($param))&quot; #if($foreach.hasNext),#end
+
+    #end
+  },
+  &quot;context&quot; : {
+    &quot;apiId&quot; : &quot;$util.escapeJavaScript($context.apiId)&quot;,
+    &quot;method&quot; : &quot;$util.escapeJavaScript($context.httpMethod)&quot;,
+    &quot;requestId&quot; : &quot;$util.escapeJavaScript($context.requestId)&quot;,
+    &quot;resourceId&quot; : &quot;$util.escapeJavaScript($context.resourceId)&quot;,
+    &quot;resourcePath&quot; : &quot;$util.escapeJavaScript($context.resourcePath)&quot;,
+    &quot;stage&quot; : &quot;$util.escapeJavaScript($context.stage)&quot;,
+    &quot;identity&quot; : {
+      &quot;accountId&quot; : &quot;$util.escapeJavaScript($context.identity.accountId)&quot;,
+      &quot;apiKey&quot; : &quot;$util.escapeJavaScript($context.identity.apiKey)&quot;,
+      &quot;caller&quot; : &quot;$util.escapeJavaScript($context.identity.caller)&quot;,
+      &quot;cognitoAuthenticationProvider&quot; : &quot;$util.escapeJavaScript($context.identity.cognitoAuthenticationProvider)&quot;,
+      &quot;cognitoAuthenticationType&quot; : &quot;$util.escapeJavaScript($context.identity.cognitoAuthenticationType)&quot;,
+      &quot;cognitoIdentityId&quot; : &quot;$util.escapeJavaScript($context.identity.cognitoIdentityId)&quot;,
+      &quot;cognitoIdentityPoolId&quot; : &quot;$util.escapeJavaScript($context.identity.cognitoIdentityPoolId)&quot;,
+      &quot;sourceIp&quot; : &quot;$util.escapeJavaScript($context.identity.sourceIp)&quot;,
+      &quot;user&quot; : &quot;$util.escapeJavaScript($context.identity.user)&quot;,
+      &quot;userAgent&quot; : &quot;$util.escapeJavaScript($context.identity.userAgent)&quot;,
+      &quot;userArn&quot; : &quot;$util.escapeJavaScript($context.identity.userArn)&quot;
+    }
+  },
+   &quot;authorizer&quot;: {
+     #foreach($param in $context.authorizer.keySet())
+     &quot;$param&quot;: &quot;$util.escapeJavaScript($context.authorizer.get($param))&quot; #if($foreach.hasNext),#end
+     #end
+   }
+}
+
+</code></pre>
+<p>The default mapping templates forwards all whitelisted data &amp; body to the lambda function.  You can see by switching on the <code>method</code> field would allow a single function to handle different HTTP methods.</p>
+<p>The next example shows how to unmarshal this data and perform request-specific actions.</p>
+<h2 id="proxying-envelope">Proxying Envelope</h2>
+<p>Because the integration request returned a successful response, the API Gateway response body contains only our lambda&rsquo;s output (<code>$input.json('$.body')</code>).</p>
+<p>To return an error that API Gateway can properly translate into an HTTP
+status code, use an <a href="https://godoc.org/github.com/mweagle/Sparta/aws/apigateway#NewErrorResponse">apigateway.NewErrorResponse</a> type. This
+custom error type includes fields that trigger integration mappings based on the
+inline <a href="https://golang.org/src/net/http/status.go">HTTP StatusCode</a>. The proper error
+code is extracted by lifting the <code>code</code> value from the Lambda&rsquo;s response body and
+using a <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-override-request-response-parameters.html">template override</a></p>
+<p>If you look at the <strong>Integration Response</strong> section of the <em>/hello/world/test</em> resource in the Console, you&rsquo;ll see a list of Regular Expression matches:</p>
+<h2 id="cleanup">Cleanup</h2>
+<p>Before moving on, remember to decommission the service via:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">go run application.go delete
+</code></pre></div><h2 id="wrapping-up">Wrapping Up</h2>
+<p>Now that we know what data is actually being sent to our API Gateway-connected Lambda function, we&rsquo;ll move on to performing a more complex operation, including returning a custom HTTP response body.</p>
+<h3 id="notes">Notes</h3>
+<ul>
+<li><a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html">Mapping Template Reference</a></li>
+</ul>
+
+
+<footer class="footline">
+	
+</footer>
+
+
+</div> 
+
+
+</div>
+
+<div id="navigation">
+
+
+
+
+
+
+    
+        
+        
+    
+    
+
+        
+        
+            
+        
+        
+
+        
+            
+
+
+    
+        
+            
+            
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+        
+    
+    
+
+        
+        
+            
+        
+        
+
+        
+            
+
+
+    
+        
+        
+    
+    
+
+        
+        
+        
+
+        
+            
+
+
+    
+        
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+            
+            
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+            
+        
+        
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+
+
+
+
+
+
+
+
+
+<a class="nav nav-prev" href="/reference/apigateway/" title=""> <i class="fa fa-chevron-left"></i></a>
+
+
+<a class="nav nav-next" href="/reference/apigateway/request_params/" title="Request Parameters" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+
+
+</div>
+
+</section>
+
+<div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+<div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+</div>
+<script src="/js/clipboard.min.js?1582502099"></script>
+<script src="/js/perfect-scrollbar.min.js?1582502099"></script>
+<script src="/js/perfect-scrollbar.jquery.min.js?1582502099"></script>
+<script src="/js/jquery.sticky.js?1582502099"></script>
+<script src="/js/featherlight.min.js?1582502099"></script>
+<script src="/js/html5shiv-printshiv.min.js?1582502099"></script>
+<script src="/js/modernizr.custom-3.6.0.js?1582502099"></script>
+<script src="/js/learn.js?1582502099"></script>
+<script src="/js/hugo-learn.js?1582502099"></script>
+
+<link href="/mermaid/mermaid.css?1582502099" rel="stylesheet" />
+<script src="/mermaid/mermaid.js?1582502099"></script>
+<script>
+mermaid.initialize({ startOnLoad: true });
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-70794971-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-70794971-2');
+</script>
+</body>
+</html>
+

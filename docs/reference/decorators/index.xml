@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sparta - AWS Lambda Microservices</title>
+    <link>/reference/decorators/</link>
+    <description>Recent content on Sparta - AWS Lambda Microservices</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sat, 01 Dec 2018 06:18:10 +0000</lastBuildDate>
+    
+	<atom:link href="/reference/decorators/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Application Load Balancer</title>
+      <link>/reference/decorators/application_load_balancer/</link>
+      <pubDate>Sat, 10 Aug 2019 14:59:12 +0000</pubDate>
+      
+      <guid>/reference/decorators/application_load_balancer/</guid>
+      <description>The ApplicationLoadBalancerDecorator allows you to expose lambda functions as Application Load Balancer targets.
+This can be useful to provide HTTP(S) access to one or more Lambda functions without requiring an API-Gateway service.
+Lambda Function Application Load Balancer (ALB) lambda targets must satisfy a prescribed Lambda signature:
+import ( awsEvents &amp;#34;github.com/aws/aws-lambda-go/events&amp;#34; ) func(context.Context, awsEvents.ALBTargetGroupRequest) awsEvents.ALBTargetGroupResponse See the ALBTargetGroupRequest and ALBTargetGroupResponse godoc entries for more information.
+An example ALB-eligible target function might look like:</description>
+    </item>
+    
+    <item>
+      <title>CloudMap Service Discovery</title>
+      <link>/reference/decorators/cloudmap/</link>
+      <pubDate>Mon, 27 May 2019 22:31:25 +0000</pubDate>
+      
+      <guid>/reference/decorators/cloudmap/</guid>
+      <description>The CloudMapServiceDecorator allows your service to register a service instance for your application.
+For example, an application that provisions a SQS queue and an AWS Lambda function that consumes messages from that queue may need a way for the Lambda function to discover the dynamically provisioned queue.
+Sparta supports an environment-based discovery service but that discovery is limited to a single Service.
+The CloudMapServiceDecorator leverages the CloudMap service to support intra- and inter-service resource discovery.</description>
+    </item>
+    
+    <item>
+      <title>CloudFront Distribution</title>
+      <link>/reference/decorators/cloudfront_distribution/</link>
+      <pubDate>Mon, 22 Jan 2018 21:49:38 +0000</pubDate>
+      
+      <guid>/reference/decorators/cloudfront_distribution/</guid>
+      <description>The CloudFrontDistributionDecorator associates a CloudFront Distribution with your S3-backed website. It is implemented as a ServiceDecoratorHookHandler as a single service can only provision one CloudFront distribution.
+Sample usage:
+//////////////////////////////////////////////////////////////////////////////// // CloudFront settings const subdomain = &amp;#34;mySiteSubdomain&amp;#34; // The domain managed by Route53. const domainName = &amp;#34;myRoute53ManagedDomain.net&amp;#34; // The site will be available at // https://mySiteSubdomain.myRoute53ManagedDomain.net  // The S3 bucketname must match the subdomain.domain // name pattern to serve as a CloudFront Distribution target var bucketName = fmt.</description>
+    </item>
+    
+    <item>
+      <title>Lambda Versioning Decorator</title>
+      <link>/reference/decorators/lambda_versioning/</link>
+      <pubDate>Mon, 22 Jan 2018 21:49:38 +0000</pubDate>
+      
+      <guid>/reference/decorators/lambda_versioning/</guid>
+      <description> TODO: LambdaVersioningDecorator
+ </description>
+    </item>
+    
+    <item>
+      <title>Publishing Outputs</title>
+      <link>/reference/decorators/publish_outputs/</link>
+      <pubDate>Mon, 22 Jan 2018 21:49:38 +0000</pubDate>
+      
+      <guid>/reference/decorators/publish_outputs/</guid>
+      <description>CloudFormation stack outputs can be used to advertise information about a service.
+Sparta provides different publishing output decorators depending on the type of CloudFormation resource output:
+ Ref: PublishRefOutputDecorator Fn::Att: PublishAttOutputDecorator  Publishing Resource Ref Values For example, to publish the dynamically lambda resource name for a given AWS Lambda function, use PublishRefOutputDecorator such as:
+lambdaFunctionName := &amp;#34;Hello World&amp;#34; lambdaFn, _ := sparta.NewAWSLambda(lambdaFunctionName, helloWorld, sparta.IAMRoleDefinition{}) lambdaFn.Decorators = append(lambdaFn.Decorators, spartaDecorators.PublishRefOutputDecorator(fmt.Sprintf(&amp;#34;%s FunctionName&amp;#34;, lambdaFunctionName), fmt.</description>
+    </item>
+    
+    <item>
+      <title>S3 Artifact Publisher</title>
+      <link>/reference/decorators/s3_artifact_publisher/</link>
+      <pubDate>Mon, 22 Jan 2018 21:49:38 +0000</pubDate>
+      
+      <guid>/reference/decorators/s3_artifact_publisher/</guid>
+      <description>The S3ArtifactPublisherDecorator enables a service to publish objects to S3 locations as part of the service lifecycle.
+This decorator is implemented as a ServiceDecoratorHookHandler which is supplied to MainEx. For example:
+hooks := &amp;amp;sparta.WorkflowHooks{} payloadData := map[string]interface{}{ &amp;#34;SomeValue&amp;#34;: gocf.Ref(&amp;#34;AWS::StackName&amp;#34;), } serviceHook := spartaDecorators.S3ArtifactPublisherDecorator(gocf.String(&amp;#34;MY-S3-BUCKETNAME&amp;#34;), gocf.Join(&amp;#34;&amp;#34;, gocf.String(&amp;#34;metadata/&amp;#34;), gocf.Ref(&amp;#34;AWS::StackName&amp;#34;), gocf.String(&amp;#34;.json&amp;#34;)), payloadData) hooks.ServiceDecorators = []sparta.ServiceDecoratorHookHandler{serviceHook} </description>
+    </item>
+    
+    <item>
+      <title>Dynamic Infrastructure</title>
+      <link>/reference/decorators/dynamic_infrastructure/</link>
+      <pubDate>Sat, 01 Dec 2018 06:28:42 +0000</pubDate>
+      
+      <guid>/reference/decorators/dynamic_infrastructure/</guid>
+      <description>In addition to provisioning AWS Lambda functions, Sparta supports the creation of other CloudFormation Resources. This enables a service to move towards immutable infrastructure, where the service and its infrastructure requirements are treated as a logical unit.
+For instance, consider the case where two developers are working in the same AWS account.
+ Developer 1 is working on analyzing text documents.  Their lambda code is triggered in response to uploading sample text documents to S3.</description>
+    </item>
+    
+  </channel>
+</rss>

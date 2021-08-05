@@ -1,0 +1,42 @@
+name: Sparta_Build
+on: [push]
+jobs:
+  build:
+    name: CI
+    strategy:
+      matrix:
+        go-version: [1.13.7]
+        platform: [ubuntu-latest]
+    runs-on: ${{ matrix.platform }}
+    env:
+      GO111MODULE: on
+      S3_BUCKET: weagle
+      # https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_REGION: ${{ secrets.AWS_REGION }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    steps:
+      - name: Set up Go 1.13
+        uses: actions/setup-go@v1
+        with:
+          go-version: ${{ matrix.go-version }}
+        id: go
+
+      - name: Check out code into the Go module directory
+        uses: actions/checkout@v1
+
+      - name: Get prerequities
+        # Workaround for https://github.com/golang/go/issues/30515
+        run: |
+          ./prerequisites.sh
+
+      # - name: Run single test
+      #   run: |
+      #     go test -v -run TestDelete
+
+      - name: CI build
+        run: |
+          # Workaround
+          # https://github.com/actions/setup-go/issues/27
+          export PATH=${PATH}:`go env GOPATH`/bin
+          mage -v CIBuild

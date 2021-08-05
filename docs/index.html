@@ -1,0 +1,3471 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.65.2" />
+    <meta name="description" content="Sparta - AWS Lambda Microservices">
+<meta name="author" content="Matt Weagle">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title> :: Sparta - AWS Lambda Microservices</title>
+
+    
+    <link href="/css/nucleus.css?1582502100" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1582502100" rel="stylesheet">
+    <link href="/css/hybrid.css?1582502100" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1582502100" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1582502100" rel="stylesheet">
+    <link href="/css/auto-complete.css?1582502100" rel="stylesheet">
+    <link href="/css/theme.css?1582502100" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1582502100" rel="stylesheet">
+    
+      <link href="/css/theme-sparta.css?1582502100" rel="stylesheet">
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1582502100"></script>
+    
+    <link href="/css/vs.css?1582502100" rel="stylesheet">
+    <script src="/js/highlight.pack.js?1582502100"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+<style type="text/css">
+pre {
+    padding: 2px;
+}
+</style>
+
+
+  </head>
+  <body class="" data-url="/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a href="/"><img src="/images/SpartaLogoNoDomain.png" height="50%" width="50%"/></a>
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1582502100"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1582502100"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1582502100"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/getting_started/" title="Getting Started" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/getting_started/">
+          Getting Started
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/example_service/" title="Example Service" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/example_service/">
+          Example Service
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/example_service/step1/" title="Overview" class="dd-item ">
+        <a href="/example_service/step1/">
+        Overview
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/example_service/step2/" title="Details" class="dd-item ">
+        <a href="/example_service/step2/">
+        Details
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/concepts/" title="Concepts" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/concepts/">
+          Concepts
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/reference/" title="Reference" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/reference/">
+          Reference
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/reference/apigateway/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/reference/apigateway/">
+          <b>API Gateway</b>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/apigateway/echo_event/" title="Echo" class="dd-item ">
+        <a href="/reference/apigateway/echo_event/">
+        Echo
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/apigateway/request_params/" title="Request Parameters" class="dd-item ">
+        <a href="/reference/apigateway/request_params/">
+        Request Parameters
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/apigateway/context/" title="Request Context" class="dd-item ">
+        <a href="/reference/apigateway/context/">
+        Request Context
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/apigateway/cors/" title="CORS" class="dd-item ">
+        <a href="/reference/apigateway/cors/">
+        CORS
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/apigateway/slack/" title="Slack SlashCommand" class="dd-item ">
+        <a href="/reference/apigateway/slack/">
+        Slack SlashCommand
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/apigateway/s3site/" title="S3 Sites with CORS" class="dd-item ">
+        <a href="/reference/apigateway/s3site/">
+        S3 Sites with CORS
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/reference/apiv2gateway/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/reference/apiv2gateway/">
+          <b>API V2 Gateway</b>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/reference/eventsources/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/reference/eventsources/">
+          <b>Event Sources</b>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/eventsources/codecommit/" title="CodeCommit" class="dd-item ">
+        <a href="/reference/eventsources/codecommit/">
+        CodeCommit
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/eventsources/cloudformation/" title="CloudFormation" class="dd-item ">
+        <a href="/reference/eventsources/cloudformation/">
+        CloudFormation
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/eventsources/cloudwatchevents/" title="CloudWatch Events" class="dd-item ">
+        <a href="/reference/eventsources/cloudwatchevents/">
+        CloudWatch Events
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/eventsources/cloudwatchlogs/" title="CloudWatch Logs" class="dd-item ">
+        <a href="/reference/eventsources/cloudwatchlogs/">
+        CloudWatch Logs
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/eventsources/cognito/" title="Cognito" class="dd-item ">
+        <a href="/reference/eventsources/cognito/">
+        Cognito
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/eventsources/dynamodb/" title="DynamoDB" class="dd-item ">
+        <a href="/reference/eventsources/dynamodb/">
+        DynamoDB
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/eventsources/kinesis/" title="Kinesis" class="dd-item ">
+        <a href="/reference/eventsources/kinesis/">
+        Kinesis
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/eventsources/s3/" title="S3" class="dd-item ">
+        <a href="/reference/eventsources/s3/">
+        S3
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/eventsources/ses/" title="SES" class="dd-item ">
+        <a href="/reference/eventsources/ses/">
+        SES
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/eventsources/sns/" title="SNS" class="dd-item ">
+        <a href="/reference/eventsources/sns/">
+        SNS
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/eventsources/sqs/" title="SQS" class="dd-item ">
+        <a href="/reference/eventsources/sqs/">
+        SQS
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/reference/archetypes/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/reference/archetypes/">
+          <b>Archetype Constructors</b>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/archetypes/event_bridge/" title="Event Bridge" class="dd-item ">
+        <a href="/reference/archetypes/event_bridge/">
+        Event Bridge
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/archetypes/codecommit/" title="CodeCommit" class="dd-item ">
+        <a href="/reference/archetypes/codecommit/">
+        CodeCommit
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/archetypes/cloudwatch/" title="CloudWatch" class="dd-item ">
+        <a href="/reference/archetypes/cloudwatch/">
+        CloudWatch
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/archetypes/dynamodb/" title="DynamoDB" class="dd-item ">
+        <a href="/reference/archetypes/dynamodb/">
+        DynamoDB
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/archetypes/kinesis/" title="Kinesis" class="dd-item ">
+        <a href="/reference/archetypes/kinesis/">
+        Kinesis
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/archetypes/kinesis_firehose/" title="Kinesis Firehose" class="dd-item ">
+        <a href="/reference/archetypes/kinesis_firehose/">
+        Kinesis Firehose
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/archetypes/rest/" title="REST Service" class="dd-item ">
+        <a href="/reference/archetypes/rest/">
+        REST Service
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/archetypes/s3/" title="S3" class="dd-item ">
+        <a href="/reference/archetypes/s3/">
+        S3
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/archetypes/sns/" title="SNS" class="dd-item ">
+        <a href="/reference/archetypes/sns/">
+        SNS
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/reference/decorators/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/reference/decorators/">
+          <b>Build-Time Decorators</b>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/decorators/application_load_balancer/" title="Application Load Balancer" class="dd-item ">
+        <a href="/reference/decorators/application_load_balancer/">
+        Application Load Balancer
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/decorators/cloudmap/" title="CloudMap Service Discovery" class="dd-item ">
+        <a href="/reference/decorators/cloudmap/">
+        CloudMap Service Discovery
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/decorators/cloudfront_distribution/" title="CloudFront Distribution" class="dd-item ">
+        <a href="/reference/decorators/cloudfront_distribution/">
+        CloudFront Distribution
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/decorators/lambda_versioning/" title="Lambda Versioning Decorator" class="dd-item ">
+        <a href="/reference/decorators/lambda_versioning/">
+        Lambda Versioning Decorator
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/decorators/publish_outputs/" title="Publishing Outputs" class="dd-item ">
+        <a href="/reference/decorators/publish_outputs/">
+        Publishing Outputs
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/decorators/s3_artifact_publisher/" title="S3 Artifact Publisher" class="dd-item ">
+        <a href="/reference/decorators/s3_artifact_publisher/">
+        S3 Artifact Publisher
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/decorators/dynamic_infrastructure/" title="Dynamic Infrastructure" class="dd-item ">
+        <a href="/reference/decorators/dynamic_infrastructure/">
+        Dynamic Infrastructure
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/reference/interceptors/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/reference/interceptors/">
+          <b>Runtime Interceptors</b>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/interceptors/xray_interceptor/" title="XRayInterceptor" class="dd-item ">
+        <a href="/reference/interceptors/xray_interceptor/">
+        XRayInterceptor
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/reference/cli_options/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/reference/cli_options/">
+          <b>Command Line Options</b>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/reference/application/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/reference/application/">
+          <b>Application Customization</b>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/application/custom_commands/" title="Custom Commands" class="dd-item ">
+        <a href="/reference/application/custom_commands/">
+        Custom Commands
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/application/custom_flags/" title="Custom Flags" class="dd-item ">
+        <a href="/reference/application/custom_flags/">
+        Custom Flags
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/application/environments/" title="Managing Environments" class="dd-item ">
+        <a href="/reference/application/environments/">
+        Managing Environments
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/application/custom_lambda_resources/" title="CloudFormation Resources" class="dd-item ">
+        <a href="/reference/application/custom_lambda_resources/">
+        CloudFormation Resources
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/application/custom_resources/" title="Custom Resources" class="dd-item ">
+        <a href="/reference/application/custom_resources/">
+        Custom Resources
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/reference/step/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/reference/step/">
+          <b>Step Functions</b>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/step/lambda/" title="Lambda" class="dd-item ">
+        <a href="/reference/step/lambda/">
+        Lambda
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/step/fargate/" title="Fargate" class="dd-item ">
+        <a href="/reference/step/fargate/">
+        Fargate
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/reference/step/services/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/reference/step/services/">
+          <b>Service Integrations</b>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/step/services/dynamodb/" title="Amazon DynamoDb" class="dd-item ">
+        <a href="/reference/step/services/dynamodb/">
+        Amazon DynamoDb
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/step/services/sagemaker/" title="Amazon SageMaker" class="dd-item ">
+        <a href="/reference/step/services/sagemaker/">
+        Amazon SageMaker
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/step/services/sns/" title="Amazon SNS" class="dd-item ">
+        <a href="/reference/step/services/sns/">
+        Amazon SNS
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/step/services/sqs/" title="Amazon SQS" class="dd-item ">
+        <a href="/reference/step/services/sqs/">
+        Amazon SQS
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/step/services/batch/" title="AWS Batch" class="dd-item ">
+        <a href="/reference/step/services/batch/">
+        AWS Batch
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/step/services/fargate/" title="AWS Fargate" class="dd-item ">
+        <a href="/reference/step/services/fargate/">
+        AWS Fargate
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/step/services/glue/" title="AWS Glue" class="dd-item ">
+        <a href="/reference/step/services/glue/">
+        AWS Glue
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/discovery/" title="Discovery Service" class="dd-item ">
+        <a href="/reference/discovery/">
+        Discovery Service
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/docker/" title="Docker" class="dd-item ">
+        <a href="/reference/docker/">
+        Docker
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/hybrid_topologies/" title="Hybrid Topologies" class="dd-item ">
+        <a href="/reference/hybrid_topologies/">
+        Hybrid Topologies
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/reference/operations/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/reference/operations/">
+          <b>Operations</b>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/operations/magefile/" title="Magefiles" class="dd-item ">
+        <a href="/reference/operations/magefile/">
+        Magefiles
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/operations/cloudwatch_alarms/" title="CloudWatch Alarms" class="dd-item ">
+        <a href="/reference/operations/cloudwatch_alarms/">
+        CloudWatch Alarms
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/operations/cloudwatch_dashboard/" title="CloudWatch Dashboard" class="dd-item ">
+        <a href="/reference/operations/cloudwatch_dashboard/">
+        CloudWatch Dashboard
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/operations/codedeploy_service_update/" title="CodeDeploy Service Update" class="dd-item ">
+        <a href="/reference/operations/codedeploy_service_update/">
+        CodeDeploy Service Update
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/operations/cicd/" title="CI/CD" class="dd-item ">
+        <a href="/reference/operations/cicd/">
+        CI/CD
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/operations/deployment_strategies/" title="Deployment Strategies" class="dd-item ">
+        <a href="/reference/operations/deployment_strategies/">
+        Deployment Strategies
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/operations/metrics_publisher/" title="Metrics Publisher" class="dd-item ">
+        <a href="/reference/operations/metrics_publisher/">
+        Metrics Publisher
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/operations/profiling/" title="Profiling" class="dd-item ">
+        <a href="/reference/operations/profiling/">
+        Profiling
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/testing/" title="Testing" class="dd-item ">
+        <a href="/reference/testing/">
+        Testing
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/supporting_packages/" title="Supporting Packages" class="dd-item ">
+        <a href="/reference/supporting_packages/">
+        Supporting Packages
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/limitations/" title="Limitations" class="dd-item ">
+        <a href="/reference/limitations/">
+        Limitations
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/reference/faq/" title="FAQ" class="dd-item ">
+        <a href="/reference/faq/">
+        FAQ
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/presentations/" title="Presentations" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/presentations/">
+          Presentations
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/meta/" title="Meta" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/meta/">
+          Meta
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/credits/" title="Credits" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/credits/">
+          Credits
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/mweagle/Sparta"><i class='fab fa-fw fa-github'></i> Github repo</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/mweagle?utf8=%E2%9C%93&amp;tab=repositories&amp;q=Sparta&amp;type=&amp;language="><i class='fas fa-fw fa-camera'></i> Showcases</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/mweagle/Sparta/blob/master/CHANGES.md"><i class='fas fa-fw fa-signal'></i> Release History</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      
+  Build: <a target="_blank" href="https://github.com/mweagle/Sparta/commit/21b5553d">21b5553d</a><p/>
+  Date: 2020-02-23T15:55:00-08:00
+
+
+<p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="http://getgrav.org">Grav</a> and <a href="http://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+
+        
+
+
+<span id="sidebar-toggle-span">
+<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
+</span>
+
+ 
+<img src="/images/SpartaLogoNoDomain.png" width="33%" height="33%">
+<h2 id="serverless-_go_-microservices-for-aws">Serverless <em>go</em> microservices for AWS</h2>
+<table style="width:90%">
+  <!-- Row 1 -->
+  <tr>
+    <td style="width:33%" valign="top">
+      <h4>
+      Sparta is a framework that transforms a <i>go</i> application into a self-deploying AWS Lambda powered service.
+      </h4>
+      All configuration and infrastructure requirements are expressed as <i>go</i> types for GitOps, repeatable, typesafe deployments.
+      </h4>
+    </td>
+    <td style="width:66%">
+      <img src="/images/sparta_ecosystem.png" alt="Sparta Ecosystem" />
+    </td>
+  </tr>
+</table>
+<hr />
+<h2 id="features">Features</h2>
+<table style="width:90%">
+  <!-- Row 1 -->
+  <tr>
+    <td style="width:50%">
+      <h2>Unified</h2>
+      <p>Use a <i>go</i> monorepo to define and your microservice's:
+      <ul>
+        <li>Application logic</li>
+        <li>AWS infrastructure</li>
+        <li>Operational metrics</li>
+        <li>Alert conditions</li>
+        <li>Security policies</li>
+      </ul>
+    </td>
+    <td style="width:50%">
+      <h2>Complete AWS Ecosystem</h2>
+      <p>Sparta enables your lambda-based service to seamlessly integrate with the entire set of AWS lambda <a href="http://docs.aws.amazon.com/lambda/latest/dg/intro-core-components.html">event sources</a> such as:
+        <ul>
+          <li>DynamoDB</li>
+          <li>S3</li>
+          <li>Kinesis</li>
+          <li>SNS</li>
+          <li>SES</li>
+          <li>CloudMap</li>
+          <li>CloudWatch Events</li>
+          <li>CloudWatch Logs</li>
+          <li>Step Functions</li>
+        </ul>
+        Additionally, your service may provision any other <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">CloudFormation</a> supported resource and even your own <a href="http://gosparta.io/docs/custom_resources">CustomResources</a>.
+        </p>
+    </td>
+  </tr>
+  <!-- Row 2 -->
+  <tr>
+    <td style="width:50%">
+      <h2>Security</h2>
+      <p>Define <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM Roles</a> with limited privileges to minimize your service's attack surface.  Both string literal and ARN expressions are supported in order to reference dynamically created resources.  Sparta treats <a href="http://searchsecurity.techtarget.com/definition/principle-of-least-privilege-POLP">POLA</a> and <a href="https://twitter.com/hashtag/secops">#SecOps</a> as first-class goals.
+      </p>
+    </td>
+    <td style="width:50%">
+      <h2>Discovery</h2>
+      <p>A service may provision dynamic AWS infrastructure, and <a href="http://gosparta.io/docs/eventsources">discover</a>, at lambda execution time, the dependent resources' AWS-assigned outputs (<code>Ref</code> &amp; <code>Fn::Att</code>).  Eliminate hardcoded <i>Magic ARNs</i> from your codebase and move towards <a href="http://chadfowler.com/2013/06/23/immutable-deployments.html">immutable infrastructure</a></p>
+    </td>
+  </tr>
+  <!-- Row 3 -->
+  <tr>
+    <td style="width:50%">
+      <h2>API Gateways</h2>
+      <p>Make your service HTTPS accessible by binding it to an <a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html">API Gateway</a> REST API during provisioning.  Alternatively, expose a WebSocket [APIV2Gateway](https://aws.amazon.com/blogs/compute/announcing-websocket-apis-in-amazon-api-gateway/) API for an even more interactive experience.</p>
+    </td>
+    <td style="width:50%">
+      <h2>Static Sites</h2>
+      <p>Include a <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">CORS-enabled</a> <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">S3-backed site</a> with your service.  S3-backed sites include API Gateway discovery information for turnkey deployment.</p>
+    </td>
+  </tr>
+</table>
+<hr />
+<a href="https://cloudcraft.co/view/8571b3bc-76ef-48c1-8401-0b6ae1d36b4e?key=d44zi4j1pxj00000" rel="Sparta Arch">
+<img src="/images/sparta_overview.png" width="50%" height="50%">
+</a>
+<p>Sparta relies on <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html">CloudFormation</a> to deploy and update your application. For resources that CloudFormation does not yet support, it uses <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-custom-resources-lambda.html">Lambda-backed Custom Resources</a> so that all service updates support both update and rollback semantics. Sparta&rsquo;s automatically generated CloudFormation resources use content-based logical IDs whenever possible to preserve <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html">service availability</a> and minimize resource churn during updates.</p>
+<h2 id="getting-started">Getting Started</h2>
+<p>To get started using Sparta, begin with the <a href="/example_service/step1/">Overview</a>.</p>
+<h2 id="administration">Administration</h2>
+<ul>
+<li>Problems? Please open an <a href="https://github.com/mweagle/Sparta/issues/new">issue</a> in GitHub.</li>
+</ul>
+<p><br />
+<img src="/images/GopherInclusion.png" alt="Eveyone Welcome" height="256"></p>
+<center>
+<h6>Courtesy of <a href="https://github.com/ashleymcnamara/gophers">gophers</a>
+</h6>
+</center>
+<br />
+<h2 id="questions">Questions?</h2>
+<p>Get in touch via:</p>
+<ul>
+<li><i class="fas fas-twitter">  @mweagle</i></li>
+<li><i class="fas fas-slack">  Gophers: <a href="https://gophers.slack.com/team/mweagle">@mweagle</a></i>
+<ul>
+<li><a href="https://invite.slack.golangbridge.org/">Signup page</a></li>
+</ul>
+</li>
+<li><i class="fas fas-slack">  Serverless: <a href="https://serverless-forum.slack.com/team/mweagle">@mweagle</a></i>
+<ul>
+<li><a href="https://wt-serverless-seattle.run.webtask.io/serverless-forum-signup?webtask_no_cache=1">Signup page</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="related-projects">Related Projects</h2>
+<ul>
+<li><a href="https://github.com/mweagle/go-cloudcondenser">go-cloudcondensor</a>
+<ul>
+<li>Define AWS CloudFormation templates in <code>go</code></li>
+</ul>
+</li>
+<li><a href="https://github.com/mweagle/go-cloudformation">go-cloudformation</a>
+<ul>
+<li><code>go</code> types for CloudFormation resources</li>
+</ul>
+</li>
+<li><a href="https://github.com/mweagle/ssm-cache">ssm-cache</a>
+<ul>
+<li>Lightweight cache for <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-paramstore.html">Systems Manager Parameter Store</a> values</li>
+</ul>
+</li>
+</ul>
+<h3 id="support-sparta">Support Sparta</h3>
+<p>Help support continued Sparta development by becoming a Patreon patron!</p>
+<p><a href="https://www.patreon.com/bePatron?u=12960916" data-patreon-widget-type="become-patron-button">Become a Patron!</a><script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script></p>
+<h2 id="other-resources">Other resources</h2>
+<ul>
+<li><a href="https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/what-is-sam.html">AWS SAM</a></li>
+<li><a href="https://medium.com/@mweagle/go-aws-lambda-building-an-html-website-with-api-gateway-and-lambda-for-go-using-sparta-5e6fe79f63ef">Build an S3 website with API Gateway and AWS Lambda for Go using Sparta</a></li>
+<li><a href="https://aws.amazon.com/blogs/compute/announcing-go-support-for-aws-lambda/">AWS blog post announcing Go support</a></li>
+<li><a href="https://medium.com/@mweagle/a-go-framework-for-aws-lambda-ab14f0c42cb#.6gtlwe5vg">Sparta - A Go framework for AWS Lambda</a></li>
+<li>Other libraries &amp; frameworks:
+<ul>
+<li><a href="https://github.com/serverless/serverless">Serverless</a></li>
+<li><a href="https://github.com/braahyan/PAWS">PAWS</a></li>
+<li><a href="http://apex.run">Apex</a></li>
+<li><a href="https://github.com/jasonmoo/lambda_proc">lambda_proc</a></li>
+<li><a href="https://github.com/xlab/go-lambda">go-lambda</a></li>
+<li><a href="https://github.com/pilwon/go-lambda">go-lambda (GRPC)</a></li>
+</ul>
+</li>
+<li>Supported AWS Lambda <a href="http://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">programming models</a></li>
+<li><a href="https://serverlesscode.com">Serverless Code Blog</a></li>
+<li><a href="https://d0.awsstatic.com/whitepapers/AWS_Serverless_Multi-Tier_Architectures.pdf">AWS Serverless Multi-Tier Architectures Whitepaper</a></li>
+<li><a href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">Lambda limits</a></li>
+<li><a href="https://aws.amazon.com/blogs/compute/the-twelve-days-of-lambda/">The Twelve Days of Lambda</a></li>
+<li><a href="http://cloudcraft.co">CloudCraft</a> is a great tool for AWS architecture diagrams</li>
+</ul>
+	
+  
+
+</div> 
+
+
+</div>
+
+<div id="navigation">
+
+
+
+
+
+
+    
+        
+        
+    
+    
+
+        
+        
+            
+        
+        
+
+        
+            
+
+
+    
+        
+            
+            
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+            
+        
+        
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+            
+        
+        
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+
+
+
+
+
+
+
+
+
+
+<a class="nav nav-next" href="/getting_started/" title="Getting Started" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+
+
+</div>
+
+</section>
+
+<div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+<div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+</div>
+<script src="/js/clipboard.min.js?1582502100"></script>
+<script src="/js/perfect-scrollbar.min.js?1582502100"></script>
+<script src="/js/perfect-scrollbar.jquery.min.js?1582502100"></script>
+<script src="/js/jquery.sticky.js?1582502100"></script>
+<script src="/js/featherlight.min.js?1582502100"></script>
+<script src="/js/html5shiv-printshiv.min.js?1582502100"></script>
+<script src="/js/modernizr.custom-3.6.0.js?1582502100"></script>
+<script src="/js/learn.js?1582502100"></script>
+<script src="/js/hugo-learn.js?1582502100"></script>
+
+<link href="/mermaid/mermaid.css?1582502100" rel="stylesheet" />
+<script src="/mermaid/mermaid.js?1582502100"></script>
+<script>
+mermaid.initialize({ startOnLoad: true });
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-70794971-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-70794971-2');
+</script>
+</body>
+</html>
+

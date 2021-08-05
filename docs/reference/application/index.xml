@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sparta - AWS Lambda Microservices</title>
+    <link>/reference/application/</link>
+    <description>Recent content on Sparta - AWS Lambda Microservices</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Wed, 09 Mar 2016 19:56:50 +0100</lastBuildDate>
+    
+	<atom:link href="/reference/application/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Custom Commands</title>
+      <link>/reference/application/custom_commands/</link>
+      <pubDate>Wed, 09 Mar 2016 19:56:50 +0100</pubDate>
+      
+      <guid>/reference/application/custom_commands/</guid>
+      <description>In addition to custom flags, an application may register completely new commands. For example, to support alternative topologies or integrated automated acceptance tests as part of a CI/CD pipeline.
+To register a custom command, define a new cobra.Command and add it to the sparta.CommandLineOptions.Root command value. Ensure you use the xxxxE Cobra functions so that errors can be properly propagated.
+httpServerCommand := &amp;amp;cobra.Command{ Use: &amp;#34;httpServer&amp;#34;, Short: &amp;#34;Sample HelloWorld HTTP server&amp;#34;, Long: `Sample HelloWorld HTTP server that binds to port: ` + HTTPServerPort, RunE: func(cmd *cobra.</description>
+    </item>
+    
+    <item>
+      <title>Custom Flags</title>
+      <link>/reference/application/custom_flags/</link>
+      <pubDate>Wed, 09 Mar 2016 19:56:50 +0100</pubDate>
+      
+      <guid>/reference/application/custom_flags/</guid>
+      <description>Some commands (eg: provision) may require additional options. For instance, your application&amp;rsquo;s provision logic may require VPC subnets or EC2 SSH Key Names.
+The default Sparta command line option flags may be extended and validated by building on the exposed Cobra command objects.
+Adding Flags To add a flag, use one of the pflag functions to register your custom flag with one of the standard CommandLineOption values.
+For example:
+// SSHKeyName is the SSH KeyName to use when provisioning new EC2 instance var SSHKeyName string func main() { // And add the SSHKeyName option to the provision step  sparta.</description>
+    </item>
+    
+    <item>
+      <title>Managing Environments</title>
+      <link>/reference/application/environments/</link>
+      <pubDate>Wed, 09 Mar 2016 19:56:50 +0100</pubDate>
+      
+      <guid>/reference/application/environments/</guid>
+      <description>It&amp;rsquo;s common for a single Sparta application to target multiple environments. For example:
+ Development Staging Production  Each environment is largely similar, but the application may need slightly different configuration in each context.
+To support this, Sparta uses Go&amp;rsquo;s conditional compilation support to ensure that configuration information is validated at build time. Conditional compilation is supported via the --tags/-t command line argument.
+This example will work through the SpartaConfig sample.</description>
+    </item>
+    
+    <item>
+      <title>CloudFormation Resources</title>
+      <link>/reference/application/custom_lambda_resources/</link>
+      <pubDate>Wed, 09 Mar 2016 19:56:50 +0100</pubDate>
+      
+      <guid>/reference/application/custom_lambda_resources/</guid>
+      <description>In addition to per-lambda custom resources, a service may benefit from the ability to include a service-scoped Lambda backed CustomResource.
+Including a custom service scoped resource is a multi-step process. The code excerpts below are from the SpartaCustomResource sample application.
+1. Resource Type The first step is to define a custom CloudFormation Resource Type
+//////////////////////////////////////////////////////////////////////////////// // 1 - Define the custom type const spartaHelloWorldResourceType = &amp;#34;Custom::sparta::HelloWorldResource&amp;#34; 2. Request Parameters The next step is to define the parameters that are supplied to the custom resource invocation.</description>
+    </item>
+    
+    <item>
+      <title>Custom Resources</title>
+      <link>/reference/application/custom_resources/</link>
+      <pubDate>Wed, 09 Mar 2016 19:56:50 +0100</pubDate>
+      
+      <guid>/reference/application/custom_resources/</guid>
+      <description>In some circumstances your service may need to provision or access resources that fall outside the standard workflow. In this case you can use CloudFormation Lambda-backed CustomResources to create or access resources during your CloudFormation stack&amp;rsquo;s lifecycle.
+Sparta provides unchecked access to the CloudFormation resource lifecycle via the RequireCustomResource function. This function registers an AWS Lambda Function as an CloudFormation custom resource lifecycle.
+In this section we&amp;rsquo;ll walk through a sample user-defined custom resource and discuss how a custom resource&amp;rsquo;s outputs can be propagated to an application-level Sparta lambda function.</description>
+    </item>
+    
+  </channel>
+</rss>

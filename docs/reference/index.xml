@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reference on Sparta - AWS Lambda Microservices</title>
+    <link>/reference/</link>
+    <description>Recent content in Reference on Sparta - AWS Lambda Microservices</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Mon, 22 Jan 2018 21:49:38 +0000</lastBuildDate>
+    
+	<atom:link href="/reference/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Discovery Service</title>
+      <link>/reference/discovery/</link>
+      <pubDate>Wed, 09 Mar 2016 19:56:50 +0100</pubDate>
+      
+      <guid>/reference/discovery/</guid>
+      <description>The ability to provision dynamic infrastructure (see also the SES Event Source Example) as part of a Sparta application creates a need to discover those resources at lambda execution time.
+Sparta exposes this functionality via sparta.Discover. This function returns information about the current stack (eg, name, region, ID) as well as metadata about the immediate dependencies of the calling go lambda function.
+The following sections walk through provisioning a S3 bucket, declaring an explicit dependency on that resource, and then discovering the resource at lambda execution time.</description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>/reference/docker/</link>
+      <pubDate>Wed, 09 Mar 2016 19:56:50 +0100</pubDate>
+      
+      <guid>/reference/docker/</guid>
+      <description>TODO
+ Docker Support Document the SpartaDocker project.</description>
+    </item>
+    
+    <item>
+      <title>Hybrid Topologies</title>
+      <link>/reference/hybrid_topologies/</link>
+      <pubDate>Wed, 09 Mar 2016 19:56:50 +0100</pubDate>
+      
+      <guid>/reference/hybrid_topologies/</guid>
+      <description>At a broad level, AWS Lambda represents a new level of compute abstraction for services. Developers don&amp;rsquo;t immediately concern themselves with HA topologies, configuration management, capacity planning, or many of the other areas traditionally handled by operations. These are handled by the vendor supplied execution environment.
+However, Lambda is a relatively new technology and is not ideally suited to certain types of tasks. For example, given the current Lambda limits, the following task types might better be handled by &amp;ldquo;legacy&amp;rdquo; AWS services:</description>
+    </item>
+    
+    <item>
+      <title>Testing</title>
+      <link>/reference/testing/</link>
+      <pubDate>Wed, 09 Mar 2016 19:56:50 +0100</pubDate>
+      
+      <guid>/reference/testing/</guid>
+      <description>While developing Sparta lambda functions it may be useful to test them locally without needing to provision each new code change. You can test your lambda functions using standard go test functionality.
+To create proper event types, consider:
+ AWS Lambda Go types Sparta types Use NewAPIGatewayMockRequest to generate API Gateway style requests.  </description>
+    </item>
+    
+    <item>
+      <title>Supporting Packages</title>
+      <link>/reference/supporting_packages/</link>
+      <pubDate>Mon, 22 Jan 2018 21:49:38 +0000</pubDate>
+      
+      <guid>/reference/supporting_packages/</guid>
+      <description>The following packages are part of the Sparta ecosystem and can be used in combination or as standalone in other applications.
+go-cloudcondensor The go-cloudcondensor package provides utilities to express CloudFormation templates as a set of go functions. Templates are evaluated and the and the resulting JSON can be integrated into existing CLI-based workflows.
+go-cloudformation The go-cloudformation package provides a Go object model for the official CloudFormation JSON Schema.
+SpartaVault SpartaVault uses KMS to encrypt values into Go types that can be safely committed to source control.</description>
+    </item>
+    
+    <item>
+      <title>Limitations</title>
+      <link>/reference/limitations/</link>
+      <pubDate>Wed, 09 Mar 2016 19:56:50 +0100</pubDate>
+      
+      <guid>/reference/limitations/</guid>
+      <description>AWS Lambda Limitations  Lambda is not yet globally available. Please view the Global Infrastructure page for the latest deployment status. There are Lambda Limits that may affect your development It&amp;rsquo;s not possible to dynamically set HTTP response headers based on the Lambda response body:  https://forums.aws.amazon.com/thread.jspa?threadID=203889 https://forums.aws.amazon.com/thread.jspa?threadID=210826   Similarly, it&amp;rsquo;s not possible to set proper error response bodies.  </description>
+    </item>
+    
+    <item>
+      <title>FAQ</title>
+      <link>/reference/faq/</link>
+      <pubDate>Wed, 09 Mar 2016 19:56:50 +0100</pubDate>
+      
+      <guid>/reference/faq/</guid>
+      <description>CloudFormation How do I create dynamic resource ARNs? Linking AWS resources together often requires creating dynamic ARN references. This can be achieved by using cloudformation.Join expressions.
+For instance:
+import ( gocf &amp;#34;github.com/mweagle/go-cloudformation&amp;#34; ) s3SiteBucketAllKeysResourceValue := gocf.Join(&amp;#34;&amp;#34;, gocf.String(&amp;#34;arn:aws:s3:::&amp;#34;), gocf.Ref(s3BucketResourceName), gocf.String(&amp;#34;/*&amp;#34;)) import ( gocf &amp;#34;github.com/mweagle/go-cloudformation&amp;#34; ) AuthorizerURI: gocf.Join(&amp;#34;&amp;#34;, gocf.String(&amp;#34;arn:aws:apigateway:&amp;#34;), gocf.Ref(&amp;#34;AWS::Region&amp;#34;).String(), gocf.String(&amp;#34;:lambda:path/2015-03-31/functions/&amp;#34;), gocf.GetAtt(myAWSLambdaInfo.LogicalResourceName(), &amp;#34;Arn&amp;#34;), gocf.String(&amp;#34;/invocations&amp;#34;)), See the CloudFormation Fn::GetAtt docs for the set of attributes created by each resource. CloudFormation pseudo-parameters can be included in dynamic expresssions via gocf.</description>
+    </item>
+    
+  </channel>
+</rss>

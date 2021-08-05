@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sparta - AWS Lambda Microservices</title>
+    <link>/reference/step/</link>
+    <description>Recent content on Sparta - AWS Lambda Microservices</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Mon, 10 Dec 2018 21:37:37 +0000</lastBuildDate>
+    
+	<atom:link href="/reference/step/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Lambda</title>
+      <link>/reference/step/lambda/</link>
+      <pubDate>Mon, 10 Dec 2018 21:45:23 +0000</pubDate>
+      
+      <guid>/reference/step/lambda/</guid>
+      <description>Step Functions AWS Step Functions are a powerful way to express long-running, complex workflows comprised of Lambda functions. With Sparta 0.20.2, you can build a State Machine as part of your application. This section walks through the three steps necessary to provision a sample &amp;ldquo;Roll Die&amp;rdquo; state machine using a single Lambda function. See SpartaStep for the full source.
+Lambda Functions The first step is to define the core Lambda function Task that will be our Step function&amp;rsquo;s core logic.</description>
+    </item>
+    
+    <item>
+      <title>Fargate</title>
+      <link>/reference/step/fargate/</link>
+      <pubDate>Sun, 16 Dec 2018 07:02:28 +0000</pubDate>
+      
+      <guid>/reference/step/fargate/</guid>
+      <description>Teaching people to do serverless is hard. It&amp;#39;s far less about teaching someone about FaaS and far more about getting people into the right mindset. It is not about technology, or at least, it&amp;#39;s not about doing technology
+&amp;mdash; Paul Johnston (@PaulDJohnston) December 13, 2018  While Serverless and FaaS are often used interchangeably, there are types of workloads that are more challenging to move to FaaS. Perhaps due to third party libraries, latency, or storage requirements, the FaaS model isn&amp;rsquo;t an ideal fit.</description>
+    </item>
+    
+  </channel>
+</rss>
